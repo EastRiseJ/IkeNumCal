@@ -1,0 +1,36 @@
+.ike-numcal-box {
+  font-size: 18px;
+}
+
+.ike-numcal-box button {
+  width: 36px;
+  height: 36px;
+  font-weight: bold;
+  margin: 0 10px 0;
+  background-color: #ebebeb;
+  border: 0;
+  border-radius: 5px;
+}
+
+.ike-numcal-box input {
+  width: 70px;
+  height: 34px;
+  background-color: #ebebeb;
+  text-align: center;
+  border: 0;
+  border-radius: 5px;
+}
+
+.ike-numcal-box.btn-sm {
+  font-size: 12px;
+}
+
+.ike-numcal-box.btn-sm button {
+  width: 24px;
+  height: 24px;
+}
+
+.ike-numcal-box.btn-sm input {
+  width: 50px;
+  height: 24px;
+}
