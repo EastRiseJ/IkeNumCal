@@ -16,7 +16,9 @@
             min: -999, // 最小值
             defaultValue: 0, //  初始值
             size: '', // 尺寸大小
-            inpDisabled: true // 输入框是否禁用
+            inpDisabled: true, // 输入框是否禁用
+            addTxt: '+',// ‘+’按钮的文字显示
+            subTxt: '-'// ‘-’按钮的文字显示
         };
         this.options = {};
 
@@ -60,7 +62,7 @@
          * 绑定事件
          */
         this.bindEvents  = function () {
-            $(document).on('click', this.el + ' .ike-btn-qua-reduce', this.quantityChange);
+            $(document).on('click', this.el + ' .ike-btn-qua-sub', this.quantityChange);
             $(document).on('click', this.el + ' .ike-btn-qua-add', this.quantityChange);
 
             $(document).on('keyup', this.el + ' .ike-inp', this.limitInput);
@@ -100,9 +102,9 @@
             }
 
             if (newVal === min) {
-                $(this.el + ' button.ike-btn-qua-reduce').prop('disabled', 'disabled');
+                $(this.el + ' button.ike-btn-qua-sub').prop('disabled', 'disabled');
             } else {
-                $(this.el + ' button.ike-btn-qua-reduce').removeProp('disabled');
+                $(this.el + ' button.ike-btn-qua-sub').removeProp('disabled');
             }
         }
 
@@ -153,7 +155,7 @@
                 if (quantity > min) {
                     _this.obj.inpVal = quantity + (flag ? 1 : -1);
                 }
-                _this.options.reduceFun && _this.options.reduceFun(_this.obj.inpVal);
+                _this.options.subFun && _this.options.subFun(_this.obj.inpVal);
                 _this.options.inpChangeFun && _this.options.inpChangeFun(_this.obj.inpVal);
             }
 
@@ -162,9 +164,10 @@
          * 渲染Dom
          */
         this.renderDom = function () {
-            $(el).html('<span class="ike-numcal-box"><button class="ike-btn-qua-reduce">-</button>' +
+            $(el).html('<span class="ike-numcal-box">' +
+                '<button class="ike-btn-qua-sub">' + this.options.subTxt + '</button>' +
                 '<input class="ike-inp" type="text" ' + (this.options.inpDisabled && 'disabled')+ ' name="" value="' + this.obj.inpVal + '" />' +
-                '<button class="ike-btn-qua-add">+</button></span>');
+                '<button class="ike-btn-qua-add">' + this.options.addTxt + '</button></span>');
             if (this.options.size) {
                 $(el + ' .ike-numcal-box').addClass('btn-' + this.options.size);
             }
