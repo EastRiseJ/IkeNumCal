@@ -3,9 +3,27 @@
 <head>
 	<title>IkeNumCal demo</title>
 	<link rel="stylesheet" type="text/css" href="./css/IkeNumCal.css">
+	<style type="text/css">
+		.opt{
+			margin: 10px 0;
+		}
+		.opt button {
+			border: 0;
+			border-radius: 5px;
+			outline: none;
+			padding: 5px 10px;
+			background-color: #48c6ef;
+			color: #fff;
+		}
+	</style>
 </head>
 <body>
 	<div id="num-cal"></div>
+	<div class="opt">
+		<button id="btn-getval">
+			获取当前数值
+		</button>
+	</div>
 
 	<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/IkeNumCal.js"></script>

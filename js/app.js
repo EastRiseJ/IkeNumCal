@@ -6,4 +6,8 @@ $(function () {
         defaultValue: 5, //  初始值
         size: '' // 尺寸大小
     });
+
+    $(document).on('click', '#btn-getval', function () {
+    	alert('当前数值为： ' + ikeNum.inpVal);
+    });
 })
