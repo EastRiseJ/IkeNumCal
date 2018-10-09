@@ -95,17 +95,10 @@
             var newVal = parseInt($(this.el + ' input').val(), 10),
                 min = _this.options.min,
                 max = _this.options.max;
-            if (newVal === max) {
-                $(this.el + ' button.ike-btn-qua-add').prop('disabled', 'disabled');
-            } else {
-                $(this.el + ' button.ike-btn-qua-add').removeProp('disabled');
-            }
 
-            if (newVal === min) {
-                $(this.el + ' button.ike-btn-qua-sub').prop('disabled', 'disabled');
-            } else {
-                $(this.el + ' button.ike-btn-qua-sub').removeProp('disabled');
-            }
+
+            $(this.el + ' button.ike-btn-qua-add').prop('disabled', newVal === max);
+            $(this.el + ' button.ike-btn-qua-sub').prop('disabled', newVal === min);
         }
 
         /**
