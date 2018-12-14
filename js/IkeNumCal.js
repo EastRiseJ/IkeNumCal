@@ -4,7 +4,7 @@
  */
 
 (function (global, factory) {
-    global.IkeNumCal = factory()
+    global ? global.IkeNumCal = factory() : window.IkeNumCal = factory();
 }(this, (function () {
     'use strict';
     function IkeNumCal (el, options) {
